@@ -4,8 +4,14 @@ import Driver.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.Assert;
 import pages.RegistrationPage;
+import utill.ExcelReader;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 public class registrationSteps {
 
@@ -32,34 +38,17 @@ public class registrationSteps {
         Assert.assertTrue(title.contains(string));
     }
 
-    @When("user enters valid First name")
-    public void user_enters_valid_first_name() {
+    @When("user enters valid info from given sheetname {string} and rownumber {int}")
+    public void user_enters_valid_info_from_given_sheetname_and_rownumber(String sheetName, Integer rowNumber) throws IOException, InvalidFormatException {
         // Write code here that turns the phrase above into concrete actions
-        registrationpage.enterFirstName();
-    }
-
-    @When("user enters valid Last name")
-    public void user_enters_valid_last_name() {
-        // Write code here that turns the phrase above into concrete actions
-        registrationpage.enterLastName();
-    }
-
-    @When("user enters valid Email")
-    public void user_enters_valid_email() {
-        // Write code here that turns the phrase above into concrete actions
-        registrationpage.enterEmail();
-    }
-
-    @When("user enters valid Password")
-    public void user_enters_valid_password() {
-        // Write code here that turns the phrase above into concrete actions
-        registrationpage.enterPassword("12345678");
-    }
-
-    @When("user enters valid Confirm Password")
-    public void user_enters_valid_confirm_password() {
-        // Write code here that turns the phrase above into concrete actions
-        registrationpage.enterConfirmPassword("12345678");
+        ExcelReader excelReader = new ExcelReader();
+        List<Map<String, String>> testdata = excelReader.getData("Testdata.xlsx", sheetName);
+        String firstName = testdata.get(rowNumber).get("FirstName");
+        String lastName = testdata.get(rowNumber).get("LastName");
+        String email = testdata.get(rowNumber).get("Email");
+        String password = testdata.get(rowNumber).get("Password");
+        String confirmPassword = testdata.get(rowNumber).get("ConfirmPassword");
+        registrationpage.enterRegistrationInfo(firstName, lastName, email, password, confirmPassword);
     }
 
     @When("user clicks on Register button")

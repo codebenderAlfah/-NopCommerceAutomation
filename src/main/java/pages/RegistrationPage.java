@@ -2,12 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import utill.RandmonGenaretor;
+
 
 public class RegistrationPage {
 
     private WebDriver driver;
-    private RandmonGenaretor randmonGenaretor = new RandmonGenaretor();
 
     // 1. element locators
     private By firstName= By.id("FirstName");
@@ -30,22 +29,11 @@ public class RegistrationPage {
     public String getPageTitle() {
        return driver.getTitle();
     }
-    public void enterFirstName() {
-        String firstName = randmonGenaretor.randFirstName();
+    public void enterRegistrationInfo(String firstName, String lastName, String email, String password, String confirmPassword) {
         driver.findElement(this.firstName).sendKeys(firstName);
-    }
-    public void enterLastName() {
-        String lastName = randmonGenaretor.randLastName();
         driver.findElement(this.lastName).sendKeys(lastName);
-    }
-    public void enterEmail() {
-        String email = randmonGenaretor.randEmail();
         driver.findElement(this.email).sendKeys(email);
-    }
-    public void enterPassword(String password) {
         driver.findElement(this.password).sendKeys(password);
-    }
-    public void enterConfirmPassword(String confirmPassword) {
         driver.findElement(this.confirmPassword).sendKeys(confirmPassword);
     }
     public void clickOnRegister() {
