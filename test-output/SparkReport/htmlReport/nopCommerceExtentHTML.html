@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">nopCommerce Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 13, 2022 05:02:52 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 16, 2022 03:22:16 PM</span></a>
 </li>
 </ul>
 </div>
@@ -52,6 +52,11 @@
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -61,19 +66,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 13, 2022 05:02:52 PM</h3>
+<h3>Aug 16, 2022 03:22:16 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 13, 2022 05:03:18 PM</h3>
+<h3>Aug 16, 2022 03:22:37 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>3</h3>
+<h3>2</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -95,13 +100,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>3</b> features passed
+<div><small data-tooltip='66%'>
+<b>2</b> features passed
 </small>
 </div>
 <div>
 <small data-tooltip='0%'><b>0</b> features failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<b>1</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -118,10 +123,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>10</b> scenarios passed</small></div>
+<div><small data-tooltip='50%'><b>5</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<b>5</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -138,10 +143,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>50</b> steps passed</small></div>
+<div><small data-tooltip='40%'><b>20</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<b>30</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -157,10 +162,35 @@
 </div></div>
 <script>
 var timeline = {
-"Login Page Feature":7.422,"Logout Feature":2.336,"Registration features":14.755
+"Login Page Feature":7.145,"Logout Feature":2.331,"Registration features":10.722
 };
 </script>
 <div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@Regression</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@Skip</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 <div class="col-lg-6 col-md-12 sysenv-container">
 <div class="card">
 <div class="card-header"><p>System/Environment</p></div>
@@ -192,21 +222,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
+passParent: 2,
 failParent: 0,
 warningParent: 0,
-skipParent: 0,
+skipParent: 1,
 childCount: 5,
-passChild: 10,
+passChild: 5,
 failChild: 0,
 warningChild: 0,
-skipChild: 0,
+skipChild: 5,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 50,
+passGrandChild: 20,
 failGrandChild: 0,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 30,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -221,8 +251,15 @@ eventsCount: 5,
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@Regression</a><a class="dropdown-item" href="#">@Skip</a>
 </ul>
 </li>
 </ul>
@@ -235,7 +272,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Login Page Feature</p>
             <p class="text-sm">
-              <span>5:02:53 PM</span> / <span>00:00:07:422</span>
+              <span>3:22:16 PM</span> / <span>00:00:07:145</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -244,9 +281,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Login Page Feature</h5>
-<span class='badge badge-success'>08.13.2022 5:02:53 PM</span>
-<span class='badge badge-danger'>08.13.2022 5:03:00 PM</span>
-<span class='badge badge-default'>00:00:07:422</span>
+<span class='badge badge-success'>08.16.2022 3:22:16 PM</span>
+<span class='badge badge-danger'>08.16.2022 3:22:23 PM</span>
+<span class='badge badge-default'>00:00:07:145</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -348,7 +385,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Logout Feature</p>
             <p class="text-sm">
-              <span>5:03:00 PM</span> / <span>00:00:02:336</span>
+              <span>3:22:23 PM</span> / <span>00:00:02:331</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -357,9 +394,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Logout Feature</h5>
-<span class='badge badge-success'>08.13.2022 5:03:00 PM</span>
-<span class='badge badge-danger'>08.13.2022 5:03:03 PM</span>
-<span class='badge badge-default'>00:00:02:336</span>
+<span class='badge badge-success'>08.16.2022 3:22:23 PM</span>
+<span class='badge badge-danger'>08.16.2022 3:22:26 PM</span>
+<span class='badge badge-default'>00:00:02:331</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -417,25 +454,25 @@ eventsCount: 5,
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="40"
+        <li class="test-item"  status="skip" test-id="40"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Registration features</p>
             <p class="text-sm">
-              <span>5:03:03 PM</span> / <span>00:00:14:755</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>3:22:26 PM</span> / <span>00:00:10:722</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Registration features</h5>
-<span class='badge badge-success'>08.13.2022 5:03:03 PM</span>
-<span class='badge badge-danger'>08.13.2022 5:03:18 PM</span>
-<span class='badge badge-default'>00:00:14:755</span>
+<h5 class="test-status text-skip">Registration features</h5>
+<span class='badge badge-success'>08.16.2022 3:22:26 PM</span>
+<span class='badge badge-danger'>08.16.2022 3:22:37 PM</span>
+<span class='badge badge-default'>00:00:10:722</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -473,45 +510,45 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="49"><span class="badge log pass-bg mr-2">Pass</span>Registration with valid info from excel</div>
+        <div class="node" id="49"><span class="badge log skip-bg mr-2">Skip</span>Registration with valid info from excel</div>
       </div>
     </div>
-        <div class="scenario_outline collapse">
+        <div class="scenario_outline ">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>Registration with valid info from excel</div>
+                  <div class="node" id="50"><span class="badge log skip-bg mr-2">Skip</span>Registration with valid info from excel</div>
                 </div>
               </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
+              <div class="card-body mt-3 ">
+                  <div class="step skip-bg">
                     <span>Given user is in the registration page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user enters valid info from given sheetname "registrationinfo" and rownumber 0</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks on Register button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the registration success message</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks continue button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the home page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
               </div>
@@ -519,38 +556,38 @@ eventsCount: 5,
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="61"><span class="badge log pass-bg mr-2">Pass</span>Registration with valid info from excel</div>
+                  <div class="node" id="62"><span class="badge log skip-bg mr-2">Skip</span>Registration with valid info from excel</div>
                 </div>
               </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
+              <div class="card-body mt-3 ">
+                  <div class="step skip-bg">
                     <span>Given user is in the registration page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user enters valid info from given sheetname "registrationinfo" and rownumber 1</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks on Register button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the registration success message</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks continue button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the home page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
               </div>
@@ -558,38 +595,38 @@ eventsCount: 5,
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="72"><span class="badge log pass-bg mr-2">Pass</span>Registration with valid info from excel</div>
+                  <div class="node" id="74"><span class="badge log skip-bg mr-2">Skip</span>Registration with valid info from excel</div>
                 </div>
               </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
+              <div class="card-body mt-3 ">
+                  <div class="step skip-bg">
                     <span>Given user is in the registration page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user enters valid info from given sheetname "registrationinfo" and rownumber 2</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks on Register button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the registration success message</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks continue button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the home page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
               </div>
@@ -597,38 +634,38 @@ eventsCount: 5,
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="83"><span class="badge log pass-bg mr-2">Pass</span>Registration with valid info from excel</div>
+                  <div class="node" id="86"><span class="badge log skip-bg mr-2">Skip</span>Registration with valid info from excel</div>
                 </div>
               </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
+              <div class="card-body mt-3 ">
+                  <div class="step skip-bg">
                     <span>Given user is in the registration page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user enters valid info from given sheetname "registrationinfo" and rownumber 3</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks on Register button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the registration success message</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks continue button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the home page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
               </div>
@@ -636,38 +673,38 @@ eventsCount: 5,
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="94"><span class="badge log pass-bg mr-2">Pass</span>Registration with valid info from excel</div>
+                  <div class="node" id="98"><span class="badge log skip-bg mr-2">Skip</span>Registration with valid info from excel</div>
                 </div>
               </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
+              <div class="card-body mt-3 ">
+                  <div class="step skip-bg">
                     <span>Given user is in the registration page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user enters valid info from given sheetname "registrationinfo" and rownumber 4</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks on Register button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the registration success message</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>When user clicks continue button</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
-                  <div class="step pass-bg">
+                  <div class="step skip-bg">
                     <span>Then user should see the home page</span>
-      <div>
+      <div>Step skipped
       </div>
                   </div>
               </div>
@@ -686,7 +723,195 @@ eventsCount: 5,
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-        </div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>6</span>
+</span>
+<p class="name">@Regression</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Regression</h4>
+<span status="skip" class='badge log badge-skip'>6 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='49'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='50'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='62'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='74'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='86'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='98'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>6</span>
+</span>
+<p class="name">@Skip</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Skip</h4>
+<span status="skip" class='badge log badge-skip'>6 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='49'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='50'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='62'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='74'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='86'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>15:22:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='40' id='98'>Registration with valid info from excel</a>
+<div class="">
+<span class="badge badge-default">Registration features.Registration with valid info from excel</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@ Feature: Registration features
     Given user is in the registration page
     When user get the title of the current page
     Then user should see the registration page title as "Your store. Register"
-
+    @Regression @Skip
   Scenario Outline: Registration with valid info from excel
     Given user is in the registration page
     When user enters valid info from given sheetname "<sheetname>" and rownumber <rownumber>
