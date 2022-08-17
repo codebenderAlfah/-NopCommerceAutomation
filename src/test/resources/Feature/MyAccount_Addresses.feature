@@ -2,7 +2,7 @@ Feature: My Account Addresses page feature
   Background: Login First
     Given user is on login page
     When User enter valid username as "testuser001@mail.com"
-    And User enter valid password as "123456"
+    And User enter valid password as "123456789"
     And Click on Login Button
 
   Scenario: Add new address
