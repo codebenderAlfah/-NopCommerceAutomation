@@ -10,13 +10,13 @@ import pages.LoginPage;
 
 public class loginSteps {
 
-    DriverManagerForDownload driverManagerForDownload = new DriverManagerForDownload();
-    private LoginPage loginpage = new LoginPage(driverManagerForDownload.getDriver());
+    DriverManager driverManager = new DriverManager();
+    private LoginPage loginpage = new LoginPage(driverManager.getDriver());
 
     @Given("user is on login page")
     public void user_is_on_login_page() {
         // Write code here that turns the phrase above into concrete actions
-        driverManagerForDownload.getDriver().get("https://localhost:44369/login");
+        driverManager.getDriver().get("https://localhost:44369/login");
     }
 
     @When("user gets the title of the page")
