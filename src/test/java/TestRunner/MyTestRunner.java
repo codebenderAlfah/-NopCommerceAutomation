@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/Feature/loginwithddatatable.feature"},
+        features = {"src/test/resources/Feature/blog.feature"},
         glue = {"Steps"},
         plugin = {"pretty",
                 "html:target/cucumber-report/nopCommerce-pretty",
